@@ -8,7 +8,8 @@
  *
  * Description: Post-order traversal recursively traverses
  * the left subtree,
- * then recursively traverses the right subtree, and finally visits the current node.
+ * then recursively traverses the right subtree, and finally
+ * visits the current node.
  * The function @func is called for each visited node, and it takes the
  * value in the node as a parameter.
  */

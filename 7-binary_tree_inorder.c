@@ -6,7 +6,8 @@
  * @func: Pointer to a function to call for each node
  *
  * Description: In-order traversal recursively traverses the left subtree,
- * then visits the current node, and finally recursively traverses the right subtree.
+ * then visits the current node, and finally recursively traverses
+ * the right subtree.
  * The function @func is called for each visited node, and it takes the
  * value in the node as a parameter.
  */

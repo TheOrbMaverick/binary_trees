@@ -18,7 +18,7 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 		return (0);
 
 	/**
-	 * Recursively count the nodes with at least 1 child in the left and 
+	 * Recursively count the nodes with at least 1 child in the left and
 	 * right subtrees, and add 1 for the current node
 	 */
 	return (binary_tree_nodes(tree->left) + binary_tree_nodes(tree->right) + 1);

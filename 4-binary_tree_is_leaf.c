@@ -8,16 +8,16 @@
  */
 
 int binary_tree_is_leaf(const binary_tree_t *node) {
-    /* If node is NULL, it is not a leaf */
-    if (node == NULL) {
-        return 0;
-    }
+	/* If node is NULL, it is not a leaf */
+	if (node == NULL) {
+		return (0);
+	}
 
-    /* If node has no children, it is a leaf */
-    if (node->left == NULL && node->right == NULL) {
-        return 1;
-    }
+	/* If node has no children, it is a leaf */
+	if (node->left == NULL && node->right == NULL) {
+		return (1);
+	}
 
-    /* If node has at least one child, it is not a leaf */
-    return 0;
+	/* If node has at least one child, it is not a leaf */
+	return (0);
 }

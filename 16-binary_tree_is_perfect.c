@@ -8,15 +8,15 @@
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-    size_t height_left, height_right;
+	size_t height_left, height_right;
 
-    if (tree == NULL)
-        return 0;
+	if (tree == NULL)
+		return (0);
 
-    height_left = binary_tree_height(tree->left);
-    height_right = binary_tree_height(tree->right);
+	height_left = binary_tree_height(tree->left);
+	height_right = binary_tree_height(tree->right);
 
-    return (height_left > height_right ? height_left : height_right) + 1;
+	return ((height_left > height_right ? height_left : height_right) + 1);
 }
 
 /**
@@ -27,29 +27,29 @@ size_t binary_tree_height(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-    size_t height, i;
-    int perfect_left, perfect_right;
+	size_t height, i;
+	int perfect_left, perfect_right;
 
-    /* If tree is NULL, it's not perfect */
-    if (tree == NULL)
-        return 0;
+	/* If tree is NULL, it's not perfect */
+	if (tree == NULL)
+		return (0);
 
-    /* Calculate the height of the tree */
-    height = binary_tree_height(tree);
+	/* Calculate the height of the tree */
+	height = binary_tree_height(tree);
 
-    /* Check if the tree is full */
-    if (!binary_tree_is_full(tree))
-        return 0;
+	/* Check if the tree is full */
+	if (!binary_tree_is_full(tree))
+		return (0);
 
-    /* Check if all levels are fully filled */
-    for (i = 0; i < height - 1; i++)
-    {
-        perfect_left = binary_tree_height(tree->left);
-        perfect_right = binary_tree_height(tree->right);
-        if (perfect_left != perfect_right)
-            return 0;
-        tree = tree->left;
-    }
+	/* Check if all levels are fully filled */
+	for (i = 0; i < height - 1; i++)
+	{
+		perfect_left = binary_tree_height(tree->left);
+		perfect_right = binary_tree_height(tree->right);
+		if (perfect_left != perfect_right)
+			return 0;
+		tree = tree->left;
+	}
 
-    return 1;
+	return (1);
 }

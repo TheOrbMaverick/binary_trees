@@ -9,20 +9,20 @@
 
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-    /* If node is NULL or the parent is NULL, return NULL */
-    if (node == NULL || node->parent == NULL)
-        return NULL;
+	/* If node is NULL or the parent is NULL, return NULL */
+	if (node == NULL || node->parent == NULL)
+		return (NULL);
 
-    /* If node is the left child, return the right child (if exists) */
-    if (node->parent->left == node)
-        return node->parent->right;
+	/* If node is the left child, return the right child (if exists) */
+	if (node->parent->left == node)
+		return node->parent->right;
 
-    /* If node is the right child, return the left child (if exists) */
-    if (node->parent->right == node)
-        return node->parent->left;
+	/* If node is the right child, return the left child (if exists) */
+	if (node->parent->right == node)
+		return (node->parent->left);
 
-    /* If node has no sibling, return NULL */
-    return NULL;
+	/* If node has no sibling, return NULL */
+	return (NULL);
 }
 
 /**
@@ -34,10 +34,10 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
-    /* If node is NULL or has no parent, return NULL */
-    if (node == NULL || node->parent == NULL)
-        return NULL;
+	/* If node is NULL or has no parent, return NULL */
+	if (node == NULL || node->parent == NULL)
+		return (NULL);
 
-    /* Use the binary_tree_sibling function to find the uncle */
-    return binary_tree_sibling(node->parent);
+	/* Use the binary_tree_sibling function to find the uncle */
+	return (binary_tree_sibling(node->parent));
 }

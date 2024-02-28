@@ -3,8 +3,12 @@
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
     binary_tree_t **queue, *temp;
-    int front = 0, rear = 0;
-    int flag = 0; /* This flag indicates if we have encountered a non-full node */
+    int front, rear;
+    int flag; /* This flag indicates if we have encountered a non-full node */
+
+    front = 0;
+    rear = 0;
+    flag = 0;
 
     if (tree == NULL)
         return (0);

@@ -11,10 +11,10 @@ avl_t *sorted_array_to_avl_helper(int *array, int start, int end);
  */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-    if (array == NULL || size == 0)
-        return (NULL);
+	if (array == NULL || size == 0)
+		return (NULL);
 
-    return (sorted_array_to_avl_helper(array, 0, size - 1));
+	return (sorted_array_to_avl_helper(array, 0, size - 1));
 }
 
 /**
@@ -27,24 +27,24 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
  */
 avl_t *sorted_array_to_avl_helper(int *array, int start, int end)
 {
-    int mid;
-    avl_t *root;
+	int mid;
+	avl_t *root;
 
-    if (start > end)
-        return (NULL);
+	if (start > end)
+		return (NULL);
 
-    /* Find middle element of the array */
-    mid = (start + end) / 2;
+	/* Find middle element of the array */
+	mid = (start + end) / 2;
 
-    /* Create a new node with the middle element */
-    root = binary_tree_node(NULL, array[mid]);
-    if (root == NULL)
-        return (NULL);
+	/* Create a new node with the middle element */
+	root = binary_tree_node(NULL, array[mid]);
+	if (root == NULL)
+		return (NULL);
 
-    /* Recursively construct left and right subtrees */
-    root->left = sorted_array_to_avl_helper(array, start, mid - 1);
-    root->right = sorted_array_to_avl_helper(array, mid + 1, end);
+	/* Recursively construct left and right subtrees */
+	root->left = sorted_array_to_avl_helper(array, start, mid - 1);
+	root->right = sorted_array_to_avl_helper(array, mid + 1, end);
 
-    /* Return the root of the constructed AVL tree */
-    return (root);
+	/* Return the root of the constructed AVL tree */
+	return (root);
 }

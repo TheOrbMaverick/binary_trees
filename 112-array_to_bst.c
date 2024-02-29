@@ -10,28 +10,28 @@
  */
 bst_t *array_to_bst_helper(int *array, int start, int end)
 {
-    bst_t *root;
-    int mid;
+	bst_t *root;
+	int mid;
 
-    /* Base case: When start index exceeds end index */
-    if (start > end)
-        return (NULL);
+	/* Base case: When start index exceeds end index */
+	if (start > end)
+		return (NULL);
 
-    /* Calculate the index of the middle element */
-    mid = start + (end - start) / 2;
+	/* Calculate the index of the middle element */
+	mid = start + (end - start) / 2;
 
-    /* Create a new node with the middle element */
-    root = binary_tree_node(NULL, array[mid]);
-    if (root == NULL)
-        return (NULL);
+	/* Create a new node with the middle element */
+	root = binary_tree_node(NULL, array[mid]);
+	if (root == NULL)
+		return (NULL);
 
-    /* Recursively build the left subtree with elements to the left of the middle */
-    root->left = array_to_bst_helper(array, start, mid - 1);
+	/* Recursively build the left subtree with elements to the left of the middle */
+	root->left = array_to_bst_helper(array, start, mid - 1);
 
-    /* Recursively build the right subtree with elements to the right of the middle */
-    root->right = array_to_bst_helper(array, mid + 1, end);
+	/* Recursively build the right subtree with elements to the right of the middle */
+	root->right = array_to_bst_helper(array, mid + 1, end);
 
-    return (root);
+	return (root);
 }
 
 /**
@@ -43,12 +43,12 @@ bst_t *array_to_bst_helper(int *array, int start, int end)
  */
 bst_t *array_to_bst(int *array, size_t size)
 {
-    /* Check if the array is empty */
-    if (array == NULL || size == 0)
-        return (NULL);
+	/* Check if the array is empty */
+	if (array == NULL || size == 0)
+		return (NULL);
 
-    /* Sort the array (if needed) */
+	/* Sort the array (if needed) */
 
-    /* Call the helper function to recursively build the BST */
-    return (array_to_bst_helper(array, 0, size - 1));
+	/* Call the helper function to recursively build the BST */
+	return (array_to_bst_helper(array, 0, size - 1));
 }

@@ -9,24 +9,24 @@
  */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
 {
-    /* Base cases */
-    if (first == NULL || second == NULL)
-        return (NULL);
-    
-    /* If either node is the ancestor of the other, return that node */
-    if (first == second)
-        return ((binary_tree_t *)first);
-    
-    /* Check if first is an ancestor of second */
-    if (binary_tree_is_descendant(second, first))
-        return ((binary_tree_t *)first);
+	/* Base cases */
+	if (first == NULL || second == NULL)
+		return (NULL);
+	
+	/* If either node is the ancestor of the other, return that node */
+	if (first == second)
+		return ((binary_tree_t *)first);
+	
+	/* Check if first is an ancestor of second */
+	if (binary_tree_is_descendant(second, first))
+		return ((binary_tree_t *)first);
 
-    /* Check if second is an ancestor of first */
-    if (binary_tree_is_descendant(first, second))
-        return ((binary_tree_t *)second);
+	/* Check if second is an ancestor of first */
+	if (binary_tree_is_descendant(first, second))
+		return ((binary_tree_t *)second);
 
-    /* Traverse upwards until we find a common ancestor */
-    return (binary_trees_ancestor(first->parent, second->parent));
+	/* Traverse upwards until we find a common ancestor */
+	return (binary_trees_ancestor(first->parent, second->parent));
 }
 
 /**
@@ -38,9 +38,9 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
  */
 int binary_tree_is_descendant(const binary_tree_t *node, const binary_tree_t *ancestor)
 {
-    if (node == NULL)
-        return 0;
-    if (node == ancestor)
-        return 1;
-    return (binary_tree_is_descendant(node->parent, ancestor));
+	if (node == NULL)
+		return 0;
+	if (node == ancestor)
+		return 1;
+	return (binary_tree_is_descendant(node->parent, ancestor));
 }

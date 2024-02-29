@@ -10,17 +10,20 @@
  */
 bst_t *array_to_bst_helper(int *array, int start, int end)
 {
+    bst_t *root;
+    int mid;
+
     /* Base case: When start index exceeds end index */
     if (start > end)
-        return NULL;
+        return (NULL);
 
     /* Calculate the index of the middle element */
-    int mid = start + (end - start) / 2;
+    mid = start + (end - start) / 2;
 
     /* Create a new node with the middle element */
-    bst_t *root = binary_tree_node(NULL, array[mid]);
+    root = binary_tree_node(NULL, array[mid]);
     if (root == NULL)
-        return NULL;
+        return (NULL);
 
     /* Recursively build the left subtree with elements to the left of the middle */
     root->left = array_to_bst_helper(array, start, mid - 1);
@@ -28,7 +31,7 @@ bst_t *array_to_bst_helper(int *array, int start, int end)
     /* Recursively build the right subtree with elements to the right of the middle */
     root->right = array_to_bst_helper(array, mid + 1, end);
 
-    return root;
+    return (root);
 }
 
 /**
@@ -42,10 +45,10 @@ bst_t *array_to_bst(int *array, size_t size)
 {
     /* Check if the array is empty */
     if (array == NULL || size == 0)
-        return NULL;
+        return (NULL);
 
     /* Sort the array (if needed) */
 
     /* Call the helper function to recursively build the BST */
-    return array_to_bst_helper(array, 0, size - 1);
+    return (array_to_bst_helper(array, 0, size - 1));
 }

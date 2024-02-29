@@ -20,7 +20,7 @@ int is_bst_util(const binary_tree_t *tree, const binary_tree_t **prev)
 
     *prev = tree;
 
-    return is_bst_util(tree->right, prev);
+    return (is_bst_util(tree->right, prev));
 }
 
 /**

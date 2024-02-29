@@ -9,6 +9,8 @@
  */
 int is_bst_util(const binary_tree_t *tree, const binary_tree_t **prev)
 {
+    *prev = tree;
+
     if (tree == NULL)
         return (1);
 
@@ -17,8 +19,6 @@ int is_bst_util(const binary_tree_t *tree, const binary_tree_t **prev)
 
     if (*prev != NULL && tree->n <= (*prev)->n)
         return (0);
-
-    *prev = tree;
 
     return (is_bst_util(tree->right, prev));
 }

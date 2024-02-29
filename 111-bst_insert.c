@@ -20,7 +20,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 	if (value == (*tree)->n)
 		return (NULL);
 
-	/* If the value is less than the current node's value, insert it in the left subtree */
+	/* If the value is less than the current node's value, insert it */
 	if (value < (*tree)->n)
 	{
 		/* Recursively insert into the left subtree */
@@ -34,7 +34,7 @@ bst_t *bst_insert(bst_t **tree, int value)
 			return (bst_insert(&((*tree)->left), value));
 		}
 	}
-	/* If the value is greater than the current node's value, insert it in the right subtree */
+	/* If the value is greater than the current node's value, insert it */
 	else
 	{
 		/* Recursively insert into the right subtree */

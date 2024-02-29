@@ -11,12 +11,12 @@ bst_t *bst_search(const bst_t *tree, int value)
 {
     /* Base cases: tree is NULL or value is found at the current node */
     if (tree == NULL || tree->n == value)
-        return (bst_t *)tree;
+        return ((bst_t *)tree);
 
     /* If value is less than the current node's value, search in the left subtree */
     if (value < tree->n)
-        return bst_search(tree->left, value);
+        return (bst_search(tree->left, value));
 
     /* If value is greater than the current node's value, search in the right subtree */
-    return bst_search(tree->right, value);
+    return (bst_search(tree->right, value));
 }

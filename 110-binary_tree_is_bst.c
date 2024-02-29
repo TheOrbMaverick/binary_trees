@@ -9,18 +9,18 @@
  */
 int is_bst_util(const binary_tree_t *tree, const binary_tree_t **prev)
 {
-    if (tree == NULL)
-        return (1);
+	if (tree == NULL)
+		return (1);
 
-    if (!is_bst_util(tree->left, prev))
-        return (0);
+	if (!is_bst_util(tree->left, prev))
+		return (0);
 
-    if (*prev != NULL && tree->n <= (*prev)->n)
-        return (0);
+	if (*prev != NULL && tree->n <= (*prev)->n)
+		return (0);
 
-    *prev = tree;
+	*prev = tree;
 
-    return (is_bst_util(tree->right, prev));
+	return (is_bst_util(tree->right, prev));
 }
 
 /**
@@ -31,12 +31,12 @@ int is_bst_util(const binary_tree_t *tree, const binary_tree_t **prev)
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-    const binary_tree_t *prev;
+	const binary_tree_t *prev;
 
-    if (tree == NULL)
-        return (0);
+	if (tree == NULL)
+		return (0);
 
-    prev = NULL;
+	prev = NULL;
 
-    return (is_bst_util(tree, &prev));
+	return (is_bst_util(tree, &prev));
 }
